@@ -1,123 +1,170 @@
 # Password Generator
 
 A simple password generator application with a **backend** API (TypeScript/Node.js) and a **frontend** UI (React).
+<p align="center">
+  <a href="https://github.com/Kash1shTyagi/Password-Generator">
+    <img src="https://raw.githubusercontent.com/Kash1shTyagi/Password-Generator/main/docs/logo.png" alt="Logo" width="120" height="120">
+  </a>
+  <h1 align="center">Password Generator</h1>
+  <h2 align="center">Project: Password-Generator</h2>
+  <p align="center">
+    <a href="https://github.com/Kash1shTyagi/Password-Generator/actions/workflows/ci.yml">
+      <img src="https://github.com/Kash1shTyagi/Password-Generator/actions/workflows/ci.yml/badge.svg" alt="CI">
+    </a>
+    <a href="https://www.npmjs.com/package/password-generator-api">
+      <img src="https://img.shields.io/npm/v/password-generator-api" alt="npm version">
+    </a>
+    <a href="LICENSE">
+      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+    </a>
+  </p>
+  <p align="center">🔒 Secure, customizable password generation as a standalone API + React UI</p>
+</p>
 
-## Table of Contents
+---
 
-* [Demo](#demo)
-* [Features](#features)
-* [Directory Structure](#directory-structure)
-* [Tech Stack](#tech-stack)
-* [Getting Started](#getting-started)
+## 📖 Table of Contents
+
+* [🚀 Features](#-features)
+* [📂 Directory Structure](#-directory-structure)
+* [⚙️ Tech Stack](#️-tech-stack)
+* [🛠️ Getting Started](#️-getting-started)
 
   * [Prerequisites](#prerequisites)
   * [Clone the Repo](#clone-the-repo)
   * [Install & Run Backend](#install--run-backend)
   * [Install & Run Frontend](#install--run-frontend)
-* [Configuration](#configuration)
-* [Scripts](#scripts)
-* [License](#license)
+* [🌐 API Endpoints](#-api-endpoints)
+* [🔧 Configuration](#-configuration)
+* [📜 Scripts](#-scripts)
+* [🏷️ License](#️-license)
+* [🤝 Author](#-author)
 
-## Demo
+---
 
-*TODO: Link to live demo or add screenshots.*
+## 🚀 Features
 
-## Features
+* **Secure** random password generation
+* **Customizable** length, character sets & complexity
+* **API-first**: RESTful endpoints for programmatic access
+* **Interactive UI**: React + Vite frontend
+* **Ready-to-deploy**: Dockerfile and CI/CD workflows
 
-* Generate secure random passwords
-* Customizable options (length, character sets)
-* REST API to generate passwords programmatically
-* Interactive React UI
+## 📂 Directory Structure
 
-## Directory Structure
-
-```
-/ (root)
+```plaintext
+Password-Generator/
 ├── backend/          # Node.js + TypeScript API
 │   ├── src/
-│   │   ├── generator.ts    # Password logic
-│   │   └── index.ts        # API server entry
-│   ├── .gitignore
-│   ├── package.json
-│   └── tsconfig.json
+│   │   ├── generator.ts  # Core password logic
+│   │   └── index.ts      # Express server
+│   ├── Dockerfile        # Container spec
+│   ├── package.json      # Dependencies & scripts
+│   └── tsconfig.json     # TS configuration
 ├── frontend/         # React application
-│   ├── public/
+│   ├── public/            # Static assets
 │   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── .gitignore
-│   ├── package.json
-│   └── vite.config.js
+│   │   ├── assets/        # Icons, images
+│   │   ├── components/    # UI components
+│   │   ├── App.jsx        # Root component
+│   │   └── main.jsx       # Entry point
+│   ├── .env.example       # Env sample (VITE_API_URL)
+│   └── vite.config.js     # Vite config
+├── .gitignore
 ├── LICENSE
 └── README.md         # This file
 ```
 
-## Tech Stack
+## ⚙️ Tech Stack
 
-* **Backend:** Node.js, Express, TypeScript
-* **Frontend:** React, Vite, JavaScript
-* **Tooling:** ESLint, Prettier, Husky (optional)
+| Backend                      | Frontend         | Tooling                         |
+| ---------------------------- | ---------------- | ------------------------------- |
+| Node.js, Express, TypeScript | React, Vite, JSX | ESLint, Prettier, Husky, Docker |
 
-## Getting Started
+## 🛠️ Getting Started
 
 ### Prerequisites
 
-* Node.js (>=16)
+* [Node.js](https://nodejs.org/) v16+
 * npm or yarn
+* Docker (optional)
 
 ### Clone the Repo
 
 ```bash
-git clone https://github.com/Kash1shTyagi/Password-Generator.git
+git clone https://github.com/Kash1shTyagi/Password-Generator.git 
 cd Password-Generator
 ```
 
-### Install & Run Backend
+<details>
+<summary>Install & Run Backend</summary>
 
 ```bash
 cd backend
 npm install
-npm run build      # compile TypeScript
-npm start          # or `npm run dev` to start in watch mode
+npm run build   # Compile TS
+npm start       # Launch server at http://localhost:4000
+# or
+npm run dev     # Watch mode with hot-reload
 ```
 
-The API will be available at `http://localhost:4000` (default).
+</details>
 
-### Install & Run Frontend
+<details>
+<summary>Install & Run Frontend</summary>
 
 ```bash
-cd ../frontend
+cd frontend
 npm install
-npm run dev
+npm run dev     # Launch UI at http://localhost:5173
 ```
 
-Open `http://localhost:3000` in your browser.
+</details>
 
-## Configuration
+## 🌐 API Endpoints
 
-* **Backend port:** configure via `PORT` env var (default: 4000)
-* **Frontend API URL:** if needed, set `VITE_API_URL` in `.env`
+| Method | Endpoint                | Description                    |
+| ------ | ----------------------- | ------------------------------ |
+| GET    | `/api/password`         | Generate a new password        |
+| POST   | `/api/password/options` | Generate password with options |
 
-## Scripts
+## 🔧 Configuration
 
-### Root (optional)
+* **Backend**: set `PORT` (default: 4000) via environment
+* **Frontend**: copy `.env.example` → `.env` and adjust `VITE_API_URL`
 
-* `npm run lint` – Run ESLint on both frontend and backend
+## 📜 Scripts
 
 ### Backend
 
-* `npm run build` – Compile TS to JS
-* `npm run dev` – Start dev server with hot-reload
-* `npm run start` – Run compiled code
+```bash
+npm run build   # Compile TypeScript
+npm run dev     # Dev server
+npm start       # Production mode
+```
 
 ### Frontend
 
-* `npm run dev` – Start Vite dev server
-* `npm run build` – Build for production
-* `npm run preview` – Preview production build
+```bash
+npm run dev     # Dev server
+npm run build   # Production build
+npm run preview # Preview build
+```
 
-## License
+### Root
 
-MIT © \[Your Name]
+```bash
+npm run lint    # ESLint for both packages
+npm run test    # (Add tests later)
+```
+
+---
+
+## 🏷️ License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Author
+
+Made with ❤️ by [Kash1shTyagi](https://github.com/Kash1shTyagi)
+
