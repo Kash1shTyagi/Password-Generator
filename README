@@ -1,77 +1,102 @@
 ````markdown
-# Password Generator
+# 🔐 Password Generator
 
-A secure, customizable password generator with REST API support and a React web interface.
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)]
 
-## Table of Contents
-- Introduction
-- Features
-- Tech Stack
-- Installation
-- Usage
-- Project Structure
-- License
-- Author
+A **secure** and **customizable** password generator with both a **React web UI** and a simple **REST API**.
 
-## Introduction
-This tool lets you generate random passwords with customizable length and character options. You can use it via a web interface or a simple REST API endpoint.
+---
 
-## Features
-- Generate passwords with uppercase, lowercase, numbers, and symbols
-- Choose password length (6–32 characters)
-- Toggle inclusion of character types
-- Access via REST API or web interface
+# 📋 Table of Contents
 
-## Tech Stack
-- Backend: Node.js, Express (TypeScript)
-- Frontend: React, TypeScript
-- Deployment: Vercel (frontend), any Node.js host (backend)
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [Getting Started](#getting-started)
+4. [Usage](#usage)
+5. [Project Structure](#project-structure)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Author](#author)
 
-## Installation
-1. Clone the repository:
+---
+
+# ✨ Features
+
+- **Password Options**: uppercase, lowercase, numbers & symbols
+- **Custom Length**: choose between **6**–**32** characters
+- **Instant Preview**: real-time generation in the web UI
+- **REST API**: how-to in [Usage](#usage)
+- **Responsive Design**: mobile-friendly React interface
+
+---
+
+# 🚀 Tech Stack
+
+| Component | Technology                |
+| --------- | ------------------------- |
+| Frontend  | React, TypeScript, Vite   |
+| Backend   | Node.js, Express, TypeScript |
+| Styling   | CSS Modules               |
+| Deployment| Vercel (frontend), any Node.js host (backend) |
+
+---
+
+# 🛠 Getting Started
+
+1. **Clone** the repo
    ```bash
    git clone https://github.com/Kash1shTyagi/Password-Generator.git
    cd Password-Generator
 ````
 
-2. Install backend dependencies:
+2. **Install** dependencies
 
    ```bash
-   cd backend
-   npm install
+   cd backend && npm install
+   cd ../frontend && npm install
    ```
-3. Install frontend dependencies:
+
+3. **Run** locally
 
    ```bash
-   cd ../frontend
-   npm install
+   # Backend (port 4000)
+   cd backend && npm run dev
+
+   # Frontend (port 3000)
+   cd frontend && npm run dev
    ```
 
-## Usage
+4. Open your browser at `http://localhost:3000`
 
-1. Start the backend server:
+---
 
-   ```bash
-   cd backend
-   npm run dev
-   ```
-2. Start the frontend app:
+# 💻 Usage
 
-   ```bash
-   cd frontend
-   npm start
-   ```
-3. Open your browser to `http://localhost:3000`
+## Web UI
 
-To use the API directly:
+* Adjust options and click **Generate** to see your password.
 
-```
+## REST API
+
+Send a GET request to:
+
+```http
 GET http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
 ```
 
-## Project Structure
+**Response**
 
+```json
+{
+  "password": "aB3$dF7!GhIjK9Lm"
+}
 ```
+
+---
+
+# 📂 Project Structure
+
+```text
 Password-Generator/
 ├── backend/
 │   ├── src/
@@ -82,22 +107,37 @@ Password-Generator/
 └── frontend/
     ├── public/
     ├── src/
+    │   ├── components/
     │   ├── App.jsx
     │   └── main.jsx
     ├── package.json
     └── vite.config.js
 ```
 
-## License
+---
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+# 🤝 Contributing
 
-## Author
+Contributions are welcome! Please:
 
-Kashish Tyagi
-[https://github.com/Kash1shTyagi](https://github.com/Kash1shTyagi)
-[tyagikashish1001@gmail.com](mailto:tyagikashish1001@gmail.com)
+1. Fork the repo
+2. Create a branch: `git checkout -b feature/my-feature`
+3. Commit: `git commit -m "feat: add new feature"`
+4. Push & open a PR
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+# 👤 Author
+
+**Kashish Tyagi**
+GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)
+Email: [tyagikashish1001@gmail.com](mailto:tyagikashish1001@gmail.com)
 
 ```
-::contentReference[oaicite:0]{index=0}
 ```
