@@ -1,18 +1,5 @@
-# Password Generator
-
 <h1 align="center">Password Generator</h1>
-<h2 align="center">Project: Password-Generator</h2>
-<p align="center">
-  <a href="https://github.com/Kash1shTyagi/Password-Generator/actions/workflows/ci.yml">
-    <img src="https://github.com/Kash1shTyagi/Password-Generator/actions/workflows/ci.yml/badge.svg" alt="CI">
-  </a>
-  <a href="https://www.npmjs.com/package/password-generator-api">
-    <img src="https://img.shields.io/npm/v/password-generator-api" alt="npm version">
-  </a>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
-  </a>
-</p>
+
 <p align="center">🔒 Secure, customizable password generation as a standalone API + React UI</p>
 
 ---
