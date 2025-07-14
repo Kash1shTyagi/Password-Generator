@@ -1,3 +1,6 @@
+Here’s a ready‑to‑paste **README.md** that uses proper Markdown fencing so your code blocks and directory trees render correctly:
+
+````markdown
 # Password Generator 🔐
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
@@ -15,15 +18,19 @@ Secure, customizable password creation—available as a REST API and a React web
 ## ✨ Features
 
 - **Randomized Strength**  
-  Mix uppercase, lowercase, numbers & symbols  
+  Mix uppercase, lowercase, numbers & symbols.
+
 - **Custom Length**  
-  Choose between 6–32 characters  
+  Choose between 6–32 characters.
+
 - **Toggleable Options**  
-  Enable/disable any character type  
+  Enable/disable any character type.
+
 - **REST API**  
-  `GET /api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true`  
+  `GET /api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true`
+
 - **Responsive UI**  
-  Modern React + TypeScript frontend  
+  Modern React + TypeScript frontend.
 
 ---
 
@@ -55,20 +62,26 @@ Install dependencies:
 
 ```bash
 # Backend
-cd backend && npm install
+cd backend
+npm install
 
 # Frontend
-cd ../frontend && npm install
+cd ../frontend
+npm install
 ```
 
 ### Running Locally
 
 ```bash
 # Start backend (defaults to port 4000)
-cd backend && npm run dev
+cd backend
+npm run dev
+```
 
+```bash
 # Start frontend (defaults to port 3000)
-cd frontend && npm start
+cd frontend
+npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -86,12 +99,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ### REST API
 
 ```http
-GET http://localhost:4000/api/generate
-?length=16
-&upper=true
-&lower=true
-&numbers=true
-&symbols=true
+GET http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
 ```
 
 **Response**
@@ -106,25 +114,33 @@ GET http://localhost:4000/api/generate
 
 ## 📂 Project Structure
 
-```
+```text
 Password-Generator/
-├── backend/        
+├── backend/
 │   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── utils/
+│   │   ├── generators.ts
 │   │   └── index.ts
+│   ├── .gitignore
+│   ├── package-lock.json
 │   ├── package.json
 │   └── tsconfig.json
-└── frontend/       
+└── frontend/
     ├── public/
+    │   └── index.html
     ├── src/
+    │   ├── assets/
     │   ├── components/
-    │   ├── hooks/
-    │   ├── styles/
-    │   └── App.tsx
+    │   ├── App.css
+    │   ├── App.jsx
+    │   ├── index.css
+    │   └── main.jsx
+    ├── .gitignore
+    ├── README.md
+    ├── eslint.config.js
+    ├── package-lock.json
     ├── package.json
-    └── tsconfig.json
+    ├── vite.config.js
+    └── LICENSE
 ```
 
 ---
@@ -132,9 +148,10 @@ Password-Generator/
 ## 🤝 Contributing
 
 1. Fork this repo
-2. Create `feature/your-feature` branch
-3. Commit & push changes
-4. Open a Pull Request
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "feat: ..." `
+4. Push to your branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
 Please follow existing code conventions & ensure linting passes.
 
@@ -154,6 +171,12 @@ See [LICENSE](LICENSE) for details.
 * GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)
 * Email: [tyagikashish1001@gmail.com](mailto:tyagikashish1001@gmail.com)
 
-```
+````
+
+**Key points:**
+- Triple backticks (```) with optional language tag (e.g. `bash`, `http`, `json`, `text`) for fenced code blocks.
+- Blank line before and after each fenced block.
+- A separate fenced block for each command or code snippet to avoid collapsed formatting.
+- A `text`‑fenced block for the directory tree to preserve its alignment.
 ::contentReference[oaicite:0]{index=0}
-```
+````
