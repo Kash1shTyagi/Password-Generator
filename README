@@ -1,95 +1,160 @@
-password generator
+````markdown
+# Password Generator 🔐
 
-a secure and customizable password generator with both rest api support and a user friendly web interface.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
 
-table of contents
-- demo
-- features
-- tech stack
-- getting started
-  - prerequisites
-  - installation
-  - running locally
-- usage
-- project structure
-- contributing
-- license
-- author
+Secure, customizable password creation—available as a REST API and a React web app.
 
-demo
-try it live at https://password-generator-lime-five-20.vercel.app
+---
 
-features
-- random passwords: generate secure passwords with a mix of letters, numbers, and symbols
-- custom length: user defined password length between 6 and 32 characters
-- character options: toggle inclusion of uppercase, lowercase, numbers, and symbols
-- rest api: integrate password generation into other applications via http endpoints
-- responsive ui: clean and intuitive react based frontend
+## 📺 Live Demo
 
-tech stack
-- backend: node.js, express (typescript)
-- frontend: react, typescript, css
-- deployment: vercel (frontend), your choice (backend)
+🔗 https://password-generator-lime-five-20.vercel.app
 
-getting started
+---
 
-prerequisites
-- node.js (v14 or higher)
-- npm or yarn
+## ✨ Features
 
-installation
-1. clone the repository:
-   git clone https://github.com/kash1shtyagi/password-generator.git
-   cd password-generator
+- **Randomized Strength**  
+  Mix uppercase, lowercase, numbers & symbols  
+- **Custom Length**  
+  Choose between 6–32 characters  
+- **Toggleable Options**  
+  Enable/disable any character type  
+- **REST API**  
+  `GET /api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true`  
+- **Responsive UI**  
+  Modern React + TypeScript frontend  
 
-2. install dependencies for both backend and frontend:
-   cd backend
-   npm install
+---
 
-   cd ../frontend
-   npm install
+## 🚀 Tech Stack
 
-running locally
-1. start the backend server:
-   cd backend
-   npm run dev
+| Layer      | Technology               |
+| ---------- | ------------------------ |
+| **Backend**| Node.js, Express, TypeScript |
+| **Frontend**| React, TypeScript, CSS    |
+| **Deploy** | Vercel (frontend) / Your choice (backend) |
 
-2. start the frontend application:
-   cd frontend
-   npm start
+---
 
-3. open your browser at http://localhost:3000 to view the app
+## 🛠️ Getting Started
 
-usage
-- use the web interface to configure password options and generate passwords on demand
-- to use the api, send a get request to:
-  http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
-- example response:
-  {"password":"ab3$df7!ghijk9lm"}
+### Prerequisites
 
-project structure
-password-generator/
-├── backend/ express api server (typescript)
+- **Node.js** ≥ v14  
+- **npm** or **yarn**
+
+### Installation
+
+```bash
+git clone https://github.com/Kash1shTyagi/Password-Generator.git
+cd Password-Generator
+````
+
+Install dependencies:
+
+```bash
+# Backend
+cd backend && npm install
+
+# Frontend
+cd ../frontend && npm install
+```
+
+### Running Locally
+
+```bash
+# Start backend (defaults to port 4000)
+cd backend && npm run dev
+
+# Start frontend (defaults to port 3000)
+cd frontend && npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📖 Usage
+
+### Web UI
+
+1. Adjust sliders & toggles
+2. Click **Generate**
+3. Copy your secure password
+
+### REST API
+
+```http
+GET http://localhost:4000/api/generate
+?length=16
+&upper=true
+&lower=true
+&numbers=true
+&symbols=true
+```
+
+**Response**
+
+```json
+{
+  "password": "aB3$dF7!GhIjK9Lm"
+}
+```
+
+---
+
+## 📂 Project Structure
+
+```
+Password-Generator/
+├── backend/        
 │   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── utils/
+│   │   └── index.ts
 │   ├── package.json
 │   └── tsconfig.json
-└── frontend/ react client (typescript)
+└── frontend/       
     ├── public/
     ├── src/
+    │   ├── components/
+    │   ├── hooks/
+    │   ├── styles/
+    │   └── App.tsx
     ├── package.json
     └── tsconfig.json
+```
 
-contributing
-fork the repository
-create a new branch for your feature
-make changes and commit
-push to your branch
-open a pull request
+---
 
-license
-this project is licensed under the mit license see the license file for details
+## 🤝 Contributing
 
-author
-kashish tyagi
-github: https://github.com/kash1shtyagi
-email: tyagikashish1001@gmail.com
+1. Fork this repo
+2. Create `feature/your-feature` branch
+3. Commit & push changes
+4. Open a Pull Request
+
+Please follow the existing code conventions & ensure linting passes.
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License**.
+See [LICENSE](LICENSE) for details.
+
+---
+
+## 👤 Author
+
+**Kashish Tyagi**
+
+* GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)
+* Email: [tyagikashish1001@gmail.com](mailto:tyagikashish1001@gmail.com)
+
+```
+::contentReference[oaicite:0]{index=0}
+```
