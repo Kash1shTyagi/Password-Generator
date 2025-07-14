@@ -1,130 +1,95 @@
-# Password Generator
+password generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+a secure and customizable password generator with both rest api support and a user friendly web interface.
 
-A secure and customizable password generator with both REST API support and a user-friendly web interface.
+table of contents
+- demo
+- features
+- tech stack
+- getting started
+  - prerequisites
+  - installation
+  - running locally
+- usage
+- project structure
+- contributing
+- license
+- author
 
-## Table of Contents
-- [Demo](#demo)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)  
-  - [Prerequisites](#prerequisites)  
-  - [Installation](#installation)  
-  - [Running Locally](#running-locally)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
+demo
+try it live at https://password-generator-lime-five-20.vercel.app
 
-## Demo
-Try it live: [https://password-generator-lime-five-20.vercel.app](https://password-generator-lime-five-20.vercel.app)
+features
+- random passwords: generate secure passwords with a mix of letters, numbers, and symbols
+- custom length: user defined password length between 6 and 32 characters
+- character options: toggle inclusion of uppercase, lowercase, numbers, and symbols
+- rest api: integrate password generation into other applications via http endpoints
+- responsive ui: clean and intuitive react based frontend
 
-## Features
-- **Random Passwords**: Generate secure passwords with a mix of letters, numbers, and symbols.
-- **Custom Length**: User-defined password length between 6 and 32 characters.
-- **Character Options**: Toggle inclusion of uppercase, lowercase, numbers, and symbols.
-- **REST API**: Integrate password generation into other applications via HTTP endpoints.
-- **Responsive UI**: Clean and intuitive React-based frontend.
+tech stack
+- backend: node.js, express (typescript)
+- frontend: react, typescript, css
+- deployment: vercel (frontend), your choice (backend)
 
-## Tech Stack
-- **Backend**: Node.js, Express (TypeScript)
-- **Frontend**: React, TypeScript, CSS
-- **Deployment**: Vercel (frontend), Your choice (backend)
+getting started
 
-## Getting Started
+prerequisites
+- node.js (v14 or higher)
+- npm or yarn
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v14+)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+installation
+1. clone the repository:
+   git clone https://github.com/kash1shtyagi/password-generator.git
+   cd password-generator
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kash1shTyagi/Password-Generator.git
-   cd Password-Generator
-   ```
-
-2. Install dependencies for both backend and frontend:
-   ```bash
-   # Backend
+2. install dependencies for both backend and frontend:
    cd backend
    npm install
 
-   # Frontend
    cd ../frontend
    npm install
-   ```
 
-### Running Locally
-
-1. Start the backend server:
-   ```bash
+running locally
+1. start the backend server:
    cd backend
    npm run dev
-   ```
 
-2. Start the frontend application:
-   ```bash
+2. start the frontend application:
    cd frontend
-   npm run dev
-   ```
+   npm start
 
-3. Open your browser at `http://localhost:3000` to view the app.
+3. open your browser at http://localhost:3000 to view the app
 
-## Usage
+usage
+- use the web interface to configure password options and generate passwords on demand
+- to use the api, send a get request to:
+  http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
+- example response:
+  {"password":"ab3$df7!ghijk9lm"}
 
-- Use the web interface to configure password options and generate passwords on demand.
-- To use the API, send a GET request to:
-  ```http
-  GET http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
-  ```
-- Response:
-  ```json
-  {
-    "password": "aB3$dF7!GhIjK9Lm"
-  }
-  ```
-
-## Project Structure
-\`\`\`
-Password-Generator/
-├── backend/         # Express API server (TypeScript)
+project structure
+password-generator/
+├── backend/ express api server (typescript)
 │   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── utils/
-│   │   └── index.ts
 │   ├── package.json
 │   └── tsconfig.json
-└── frontend/        # React client (TypeScript)
+└── frontend/ react client (typescript)
     ├── public/
     ├── src/
-    │   ├── components/
-    │   ├── hooks/
-    │   ├── styles/
-    │   └── App.tsx
     ├── package.json
     └── tsconfig.json
-\`\`\`
 
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch: \`git checkout -b feature/YourFeature\`
-3. Make your changes and commit: \`git commit -m "feat: Add ..."\`
-4. Push to the branch: \`git push origin feature/YourFeature\`
-5. Open a Pull Request.
+contributing
+fork the repository
+create a new branch for your feature
+make changes and commit
+push to your branch
+open a pull request
 
-Please follow the existing code style and ensure that all linter checks pass.
+license
+this project is licensed under the mit license see the license file for details
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Author
-**Kashish Tyagi**
-
-- GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)
-- Email: tyagikashish1001@gmail.com
+author
+kashish tyagi
+github: https://github.com/kash1shtyagi
+email: tyagikashish1001@gmail.com
