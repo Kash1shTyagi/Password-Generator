@@ -1,130 +1,164 @@
 # Password Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<h1 align="center">Password Generator</h1>
+<h2 align="center">Project: Password-Generator</h2>
+<p align="center">
+  <a href="https://github.com/Kash1shTyagi/Password-Generator/actions/workflows/ci.yml">
+    <img src="https://github.com/Kash1shTyagi/Password-Generator/actions/workflows/ci.yml/badge.svg" alt="CI">
+  </a>
+  <a href="https://www.npmjs.com/package/password-generator-api">
+    <img src="https://img.shields.io/npm/v/password-generator-api" alt="npm version">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  </a>
+</p>
+<p align="center">🔒 Secure, customizable password generation as a standalone API + React UI</p>
 
-A secure and customizable password generator with both REST API support and a user-friendly web interface.
+---
 
-## Table of Contents
-- [Demo](#demo)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)  
-  - [Prerequisites](#prerequisites)  
-  - [Installation](#installation)  
-  - [Running Locally](#running-locally)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
+## 📖 Table of Contents
 
-## Demo
-Try it live: [https://password-generator-lime-five-20.vercel.app](https://password-generator-lime-five-20.vercel.app)
+* [🚀 Features](#-features)
+* [📂 Directory Structure](#-directory-structure)
+* [⚙️ Tech Stack](#️-tech-stack)
+* [🛠️ Getting Started](#️-getting-started)
 
-## Features
-- **Random Passwords**: Generate secure passwords with a mix of letters, numbers, and symbols.
-- **Custom Length**: User-defined password length between 6 and 32 characters.
-- **Character Options**: Toggle inclusion of uppercase, lowercase, numbers, and symbols.
-- **REST API**: Integrate password generation into other applications via HTTP endpoints.
-- **Responsive UI**: Clean and intuitive React-based frontend.
+  * [Prerequisites](#prerequisites)
+  * [Clone the Repo](#clone-the-repo)
+  * [Install & Run Backend](#install--run-backend)
+  * [Install & Run Frontend](#install--run-frontend)
+* [🌐 API Endpoints](#-api-endpoints)
+* [🔧 Configuration](#-configuration)
+* [📜 Scripts](#-scripts)
+* [🏷️ License](#️-license)
+* [🤝 Author](#-author)
 
-## Tech Stack
-- **Backend**: Node.js, Express (TypeScript)
-- **Frontend**: React, TypeScript, CSS
-- **Deployment**: Vercel (frontend), Your choice (backend)
+---
 
-## Getting Started
+## 🚀 Features
+
+* **Secure** random password generation
+* **Customizable** length, character sets & complexity
+* **API-first**: RESTful endpoints for programmatic access
+* **Interactive UI**: React + Vite frontend
+* **Ready-to-deploy**: Dockerfile and CI/CD workflows
+
+## 📂 Directory Structure
+
+```plaintext
+Password-Generator/
+├── backend/          # Node.js + TypeScript API
+│   ├── src/
+│   │   ├── generator.ts  # Core password logic
+│   │   └── index.ts      # Express server
+│   ├── Dockerfile        # Container spec
+│   ├── package.json      # Dependencies & scripts
+│   └── tsconfig.json     # TS configuration
+├── frontend/         # React application
+│   ├── public/            # Static assets
+│   ├── src/
+│   │   ├── assets/        # Icons, images
+│   │   ├── components/    # UI components
+│   │   ├── App.jsx        # Root component
+│   │   └── main.jsx       # Entry point
+│   ├── .env.example       # Env sample (VITE_API_URL)
+│   └── vite.config.js     # Vite config
+├── .gitignore
+├── LICENSE
+└── README.md         # This file
+```
+
+## ⚙️ Tech Stack
+
+| Backend                      | Frontend         | Tooling                         |
+| ---------------------------- | ---------------- | ------------------------------- |
+| Node.js, Express, TypeScript | React, Vite, JSX | ESLint, Prettier, Husky, Docker |
+
+## 🛠️ Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v14+)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### Installation
+* [Node.js](https://nodejs.org/) v16+
+* npm or yarn
+* Docker (optional)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kash1shTyagi/Password-Generator.git
-   cd Password-Generator
-   ```
+### Clone the Repo
 
-2. Install dependencies for both backend and frontend:
-   ```bash
-   # Backend
-   cd backend
-   npm install
+```bash
+git clone https://github.com/Kash1shTyagi/Password-Generator.git 
+cd Password-Generator
+```
 
-   # Frontend
-   cd ../frontend
-   npm install
-   ```
+<details>
+<summary>Install & Run Backend</summary>
 
-### Running Locally
+```bash
+cd backend
+npm install
+npm run build   # Compile TS
+npm start       # Launch server at http://localhost:4000
+# or
+npm run dev     # Watch mode with hot-reload
+```
 
-1. Start the backend server:
-   ```bash
-   cd backend
-   npm run dev
-   ```
+</details>
 
-2. Start the frontend application:
-   ```bash
-   cd frontend
-   npm run dev
-   ```
+<details>
+<summary>Install & Run Frontend</summary>
 
-3. Open your browser at `http://localhost:3000` to view the app.
+```bash
+cd frontend
+npm install
+npm run dev     # Launch UI at http://localhost:5173
+```
 
-## Usage
+</details>
 
-- Use the web interface to configure password options and generate passwords on demand.
-- To use the API, send a GET request to:
-  ```http
-  GET http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
-  ```
-- Response:
-  ```json
-  {
-    "password": "aB3$dF7!GhIjK9Lm"
-  }
-  ```
+## 🌐 API Endpoints
 
-## Project Structure
-\`\`\`
-Password-Generator/
-├── backend/         # Express API server (TypeScript)
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── utils/
-│   │   └── index.ts
-│   ├── package.json
-│   └── tsconfig.json
-└── frontend/        # React client (TypeScript)
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   ├── hooks/
-    │   ├── styles/
-    │   └── App.tsx
-    ├── package.json
-    └── tsconfig.json
-\`\`\`
+| Method | Endpoint                | Description                    |
+| ------ | ----------------------- | ------------------------------ |
+| GET    | `/api/password`         | Generate a new password        |
+| POST   | `/api/password/options` | Generate password with options |
 
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch: \`git checkout -b feature/YourFeature\`
-3. Make your changes and commit: \`git commit -m "feat: Add ..."\`
-4. Push to the branch: \`git push origin feature/YourFeature\`
-5. Open a Pull Request.
+## 🔧 Configuration
 
-Please follow the existing code style and ensure that all linter checks pass.
+* **Backend**: set `PORT` (default: 4000) via environment
+* **Frontend**: copy `.env.example` → `.env` and adjust `VITE_API_URL`
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## 📜 Scripts
 
-## Author
-**Kashish Tyagi**
+### Backend
 
-- GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)
-- Email: tyagikashish1001@gmail.com
+```bash
+npm run build   # Compile TypeScript
+npm run dev     # Dev server
+npm start       # Production mode
+```
+
+### Frontend
+
+```bash
+npm run dev     # Dev server
+npm run build   # Production build
+npm run preview # Preview build
+```
+
+### Root
+
+```bash
+npm run lint    # ESLint for both packages
+npm run test    # (Add tests later)
+```
+
+---
+
+## 🏷️ License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Author
+
+Made with ❤️ by [Kash1shTyagi](https://github.com/Kash1shTyagi)
+
