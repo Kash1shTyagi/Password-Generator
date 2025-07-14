@@ -1,15 +1,11 @@
-<div align="center">
-  <h1>🔐 Password Generator</h1>
-  <p>
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
-    <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version" />
-    <img src="https://img.shields.io/badge/Node.js-%3E%3D14-green.svg" alt="Node.js" />
-    <img src="https://img.shields.io/badge/React-%3E%3D17-blue.svg" alt="React" />
-  </p>
-  <p>
-    A secure, customizable password generator with both REST API support and a sleek React web UI.
-  </p>
-</div>
+# 🔐 Password Generator
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()  
+[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D14-green.svg)]()  
+[![React](https://img.shields.io/badge/React-%3E%3D17-blue.svg)]()
+
+A secure, customizable password generator with both REST API support and a sleek React web UI.
 
 ---
 
@@ -70,121 +66,3 @@
 ```bash
 git clone https://github.com/Kash1shTyagi/Password-Generator.git
 cd Password-Generator
-```
-
-### 2. Install Dependencies
-
-```bash
-# Backend
-cd backend
-npm install
-
-# Frontend
-cd ../frontend
-npm install
-```
-
-### 3. Run Locally
-
-```bash
-# Start backend (port 4000)
-cd backend && npm run dev
-
-# Start frontend (port 3000)
-cd frontend && npm run dev
-```
-
-Open your browser at <http://localhost:3000>.
-
----
-
-## 📌 Code Snippets
-
-### REST API Usage
-
-```http
-GET http://localhost:4000/api/generate?length=20&upper=true&lower=true&numbers=true&symbols=false
-```
-
-**Response**
-
-```json
-{
-  "password": "Nf7xPq9wGtR2LbVcDe0h"
-}
-```
-
-### Frontend Example (React Hook)
-
-```tsx
-import { useState } from 'react';
-
-export function useGeneratePassword() {
-  const [pw, setPw] = useState('');
-  const generate = async (opts) => {
-    const res = await fetch(`/api/generate?${new URLSearchParams(opts)}`);
-    const { password } = await res.json();
-    setPw(password);
-  };
-  return { pw, generate };
-}
-```
-
----
-
-## 📂 Project Structure
-
-```text
-Password-Generator/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── utils/
-│   │   └── index.ts
-│   ├── package.json
-│   └── tsconfig.json
-└── frontend/
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   ├── hooks/
-    │   ├── App.tsx
-    │   └── main.tsx
-    ├── package.json
-    └── vite.config.ts
-```
-
----
-
-## 🤝 Contributing
-
-1. Fork this repo  
-2. Create a branch:  
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-3. Commit changes:  
-   ```bash
-   git commit -m "feat: add new feature"
-   ```
-4. Push & Open PR:  
-   ```bash
-   git push origin feature/YourFeature
-   ```
-5. We’ll review & merge!
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.  
-See [LICENSE](LICENSE) for details.
-
----
-
-## 👤 Author
-
-**Kashish Tyagi**  
-- GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)  
-- Email: tyagikashish1001@gmail.com  
