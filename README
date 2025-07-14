@@ -1,68 +1,103 @@
-# 🔐 Password Generator
+````markdown
+# Password Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()  
-[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D14-green.svg)]()  
-[![React](https://img.shields.io/badge/React-%3E%3D17-blue.svg)]()
+A secure, customizable password generator with REST API support and a React web interface.
 
-A secure, customizable password generator with both REST API support and a sleek React web UI.
+## Table of Contents
+- Introduction
+- Features
+- Tech Stack
+- Installation
+- Usage
+- Project Structure
+- License
+- Author
 
----
+## Introduction
+This tool lets you generate random passwords with customizable length and character options. You can use it via a web interface or a simple REST API endpoint.
 
-## 📋 Table of Contents
+## Features
+- Generate passwords with uppercase, lowercase, numbers, and symbols
+- Choose password length (6–32 characters)
+- Toggle inclusion of character types
+- Access via REST API or web interface
 
-1. [Introduction](#introduction)  
-2. [Tech Stack](#tech-stack)  
-3. [Features](#features)  
-4. [Quick Start](#quick-start)  
-5. [Code Snippets](#code-snippets)  
-6. [Project Structure](#project-structure)  
-7. [Contributing](#contributing)  
-8. [License](#license)  
-9. [Author](#author)  
+## Tech Stack
+- Backend: Node.js, Express (TypeScript)
+- Frontend: React, TypeScript
+- Deployment: Vercel (frontend), any Node.js host (backend)
 
----
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Kash1shTyagi/Password-Generator.git
+   cd Password-Generator
+````
 
-## 📝 Introduction
+2. Install backend dependencies:
 
-**Password Generator** is a lightweight tool that lets you configure and generate highly secure passwords in your browser or via a simple REST API endpoint. Perfect for developers, sysadmins, and anyone who needs strong, random credentials on the fly.
+   ```bash
+   cd backend
+   npm install
+   ```
+3. Install frontend dependencies:
 
----
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-## ⚙️ Tech Stack
+## Usage
 
-| Layer       | Technology               |
-| ----------- | ------------------------ |
-| **Backend** | Node.js, Express, TypeScript |
-| **Frontend**| React, TypeScript, Vite  |
-| **Styling** | Tailwind CSS             |
-| **Deploy**  | Vercel (frontend), any Node host (backend) |
+1. Start the backend server:
 
----
+   ```bash
+   cd backend
+   npm run dev
+   ```
+2. Start the frontend app:
 
-## ✨ Features
+   ```bash
+   cd frontend
+   npm start
+   ```
+3. Open your browser to `http://localhost:3000`
 
-- 🔀 **Randomized Strength**  
-  Choose from uppercase, lowercase, numbers & symbols.
+To use the API directly:
 
-- 📏 **Custom Length**  
-  Define length from 6 to 32 characters.
+```
+GET http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
+```
 
-- ⚙️ **Toggleable Options**  
-  Turn on/off any character type at will.
+## Project Structure
 
-- 🌐 **REST API**  
-  `GET /api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true`
+```
+Password-Generator/
+├── backend/
+│   ├── src/
+│   │   ├── generators.ts
+│   │   └── index.ts
+│   ├── package.json
+│   └── tsconfig.json
+└── frontend/
+    ├── public/
+    ├── src/
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── package.json
+    └── vite.config.js
+```
 
-- 📱 **Responsive UI**  
-  Fast, intuitive React + Tailwind interface.
+## License
 
----
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## 🚀 Quick Start
+## Author
 
-### 1. Clone Repository
+Kashish Tyagi
+[https://github.com/Kash1shTyagi](https://github.com/Kash1shTyagi)
+[tyagikashish1001@gmail.com](mailto:tyagikashish1001@gmail.com)
 
-```bash
-git clone https://github.com/Kash1shTyagi/Password-Generator.git
-cd Password-Generator
+```
+::contentReference[oaicite:0]{index=0}
+```
