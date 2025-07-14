@@ -39,7 +39,6 @@ Password-Generator/
 │   ├── src/
 │   │   ├── generator.ts  # Core password logic
 │   │   └── index.ts      # Express server
-│   ├── Dockerfile        # Container spec
 │   ├── package.json      # Dependencies & scripts
 │   └── tsconfig.json     # TS configuration
 ├── frontend/         # React application
