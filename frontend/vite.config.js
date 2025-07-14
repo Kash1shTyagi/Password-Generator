@@ -8,7 +8,7 @@ export default defineConfig({
     server: {
     proxy: {
       // any request to /api → http://localhost:5000/api
-      '/api': 'http://localhost:5000'
+      '/api': 'https://password-generator-89be.onrender.com'
     }
   }
 })
