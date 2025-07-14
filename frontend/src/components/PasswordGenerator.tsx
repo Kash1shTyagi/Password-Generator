@@ -32,7 +32,7 @@ export default function PasswordGenerator() {
   const generate = async () => {
     const finalLength = parseInt(length, 10) || 4;
     try {
-      const { data } = await axios.post('/api/generate-password', {
+      const { data } = await axios.post('https://password-generator-89be.onrender.com/api/generate-password', {
         length: finalLength,
         includeLetters,
         includeNumbers,
@@ -40,7 +40,7 @@ export default function PasswordGenerator() {
       });
       setPassword(data.password);
     } catch {
-      setPassword('❗ Error generating password');
+      setPassword('❗ Error Generating Password');
     }
   };
   const onSubmit = (e: React.FormEvent) => {
