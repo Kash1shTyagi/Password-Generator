@@ -1,142 +1,123 @@
-🔐 Password Generator
+# Password Generator
 
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)]
+A simple password generator application with a **backend** API (TypeScript/Node.js) and a **frontend** UI (React).
 
-A **secure** and **customizable** password generator with both a **React web UI** and a simple **REST API**.
+## Table of Contents
 
----
+* [Demo](#demo)
+* [Features](#features)
+* [Directory Structure](#directory-structure)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
 
-# 📋 Table of Contents
+  * [Prerequisites](#prerequisites)
+  * [Clone the Repo](#clone-the-repo)
+  * [Install & Run Backend](#install--run-backend)
+  * [Install & Run Frontend](#install--run-frontend)
+* [Configuration](#configuration)
+* [Scripts](#scripts)
+* [License](#license)
 
-1. [Features](#features)
-2. [Tech Stack](#tech-stack)
-3. [Getting Started](#getting-started)
-4. [Usage](#usage)
-5. [Project Structure](#project-structure)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Author](#author)
+## Demo
 
----
+*TODO: Link to live demo or add screenshots.*
 
-# ✨ Features
+## Features
 
-- **Password Options**: uppercase, lowercase, numbers & symbols
-- **Custom Length**: choose between **6**–**32** characters
-- **Instant Preview**: real-time generation in the web UI
-- **REST API**: how-to in [Usage](#usage)
-- **Responsive Design**: mobile-friendly React interface
+* Generate secure random passwords
+* Customizable options (length, character sets)
+* REST API to generate passwords programmatically
+* Interactive React UI
 
----
+## Directory Structure
 
-# 🚀 Tech Stack
-
-| Component | Technology                |
-| --------- | ------------------------- |
-| Frontend  | React, TypeScript, Vite   |
-| Backend   | Node.js, Express, TypeScript |
-| Styling   | CSS Modules               |
-| Deployment| Vercel (frontend), any Node.js host (backend) |
-
----
-
-# 🛠 Getting Started
-
-1. **Clone** the repo
-   ```bash
-   git clone https://github.com/Kash1shTyagi/Password-Generator.git
-   cd Password-Generator
-````
-
-2. **Install** dependencies
-
-   ```bash
-   cd backend && npm install
-   cd ../frontend && npm install
-   ```
-
-3. **Run** locally
-
-   ```bash
-   # Backend (port 4000)
-   cd backend && npm run dev
-
-   # Frontend (port 3000)
-   cd frontend && npm run dev
-   ```
-
-4. Open your browser at `http://localhost:3000`
-
----
-
-# 💻 Usage
-
-## Web UI
-
-* Adjust options and click **Generate** to see your password.
-
-## REST API
-
-Send a GET request to:
-
-```http
-GET http://localhost:4000/api/generate?length=16&upper=true&lower=true&numbers=true&symbols=true
 ```
-
-**Response**
-
-```json
-{
-  "password": "aB3$dF7!GhIjK9Lm"
-}
-```
-
----
-
-# 📂 Project Structure
-
-```text
-Password-Generator/
-├── backend/
+/ (root)
+├── backend/          # Node.js + TypeScript API
 │   ├── src/
-│   │   ├── generators.ts
-│   │   └── index.ts
+│   │   ├── generator.ts    # Password logic
+│   │   └── index.ts        # API server entry
+│   ├── .gitignore
 │   ├── package.json
 │   └── tsconfig.json
-└── frontend/
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   ├── App.jsx
-    │   └── main.jsx
-    ├── package.json
-    └── vite.config.js
+├── frontend/         # React application
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── .gitignore
+│   ├── package.json
+│   └── vite.config.js
+├── LICENSE
+└── README.md         # This file
 ```
 
----
+## Tech Stack
 
-# 🤝 Contributing
+* **Backend:** Node.js, Express, TypeScript
+* **Frontend:** React, Vite, JavaScript
+* **Tooling:** ESLint, Prettier, Husky (optional)
 
-Contributions are welcome! Please:
+## Getting Started
 
-1. Fork the repo
-2. Create a branch: `git checkout -b feature/my-feature`
-3. Commit: `git commit -m "feat: add new feature"`
-4. Push & open a PR
+### Prerequisites
 
----
+* Node.js (>=16)
+* npm or yarn
 
-# 📄 License
+### Clone the Repo
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
-
----
-
-# 👤 Author
-
-**Kashish Tyagi**
-GitHub: [@Kash1shTyagi](https://github.com/Kash1shTyagi)
-Email: [tyagikashish1001@gmail.com](mailto:tyagikashish1001@gmail.com)
-
+```bash
+git clone https://github.com/Kash1shTyagi/Password-Generator.git
+cd Password-Generator
 ```
+
+### Install & Run Backend
+
+```bash
+cd backend
+npm install
+npm run build      # compile TypeScript
+npm start          # or `npm run dev` to start in watch mode
 ```
+
+The API will be available at `http://localhost:4000` (default).
+
+### Install & Run Frontend
+
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000` in your browser.
+
+## Configuration
+
+* **Backend port:** configure via `PORT` env var (default: 4000)
+* **Frontend API URL:** if needed, set `VITE_API_URL` in `.env`
+
+## Scripts
+
+### Root (optional)
+
+* `npm run lint` – Run ESLint on both frontend and backend
+
+### Backend
+
+* `npm run build` – Compile TS to JS
+* `npm run dev` – Start dev server with hot-reload
+* `npm run start` – Run compiled code
+
+### Frontend
+
+* `npm run dev` – Start Vite dev server
+* `npm run build` – Build for production
+* `npm run preview` – Preview production build
+
+## License
+
+MIT © \[Your Name]
